@@ -120,6 +120,23 @@ public class SinglyLinkedList {
         System.out.println("null");
     }
 
+    public Node reverse(Node head) {
+        Node curr = head;
+        Node temp;
+        Node pre = null;
+        while (curr != null) {
+            temp = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = temp;
+        }
+        return pre;
+    }
+
+    public Node reverse() {
+        return reverse(head);
+    }
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         SinglyLinkedList list = new SinglyLinkedList();
@@ -132,7 +149,8 @@ public class SinglyLinkedList {
             System.out.println("4. Delete by value");
             System.out.println("5. Delete at position (0-based)");
             System.out.println("6. Display");
-            System.out.println("7. Exit");
+            System.out.println("7. Reverse list");
+            System.out.println("8. Exit");
             System.out.print("Enter your choice: ");
             int choice = s.nextInt();
 
@@ -168,7 +186,12 @@ public class SinglyLinkedList {
                     list.display();
                     break;
                 case 7:
+                    list.head = list.reverse();
+                    System.out.println("List reversed.");
+                    break;
+                case 8:
                     System.out.println("Exiting program.");
+                    s.close();
                     return;
                 default:
                     System.out.println("Invalid choice. Try again.");
