@@ -11,6 +11,7 @@ public class Josephus
 		    m = (int)Math.pow(2,i++);
 		}
 		int r = n - m;
-		System.out.println(r*2+1);
+		int res = r*2+1 > n? r*2+1-n:r*2+1;
+		System.out.println(res);
 	}
 }
