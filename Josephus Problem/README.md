@@ -61,19 +61,18 @@ This works because the Josephus problem with step size 2 follows a binary patter
 ```java
 import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int n = s.nextInt();
-        int m = 0;
-        int i = 0;
-
-        // Find the largest power of 2 less than or equal to n
-        while (Math.pow(2, i) < n) {
-            m = (int)Math.pow(2, i++);
-        }
-
-        int r = n - m;
-        System.out.println(r * 2 + 1);
-    }
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int m = 0;
+		int i = 0;
+		while(Math.pow(2,i) < n) {
+		    m = (int)Math.pow(2,i++);
+		}
+		int r = n - m;
+		int res = r*2+1 > n? r*2+1-n:r*2+1;
+		System.out.println(res);
+	}
 }
