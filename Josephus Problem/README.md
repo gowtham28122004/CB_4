@@ -77,4 +77,17 @@ public class Main
 }
 
 ```
+## Optimal Solution (O(1))
 
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int hp = Integer.highestOneBit(n);
+        System.out.println(2 * (n - hp) + 1);
+    }
+}
+```
