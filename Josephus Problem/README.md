@@ -77,7 +77,3 @@ public class Main {
         System.out.println(r * 2 + 1);
     }
 }
-
----
-
-✅ **Copy this block into a file named `README.md`** and you're ready to `git push`. Let me know if you also need the `.java` file separately bundled.
